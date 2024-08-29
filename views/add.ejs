@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lägg till kurs</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/stylesheet.css">
+</head>
+<body>
+    <header>
+        <a href="/" id="logo">Backend - Moment 1</a>
+        <!-- Meny knapp för att öppna mobilmenyn-->
+        <button class="menu-btn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>
+
+        <!-- navigering -->
+        <nav id="nav-menu" aria-label="huvudmeny" role="navigation">
+            <!-- Knapp som visas om mobilmenyn är utfälld -->
+            <button class="menu-btn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">Stäng</span>
+            </button>
+            <ul>
+                <li><a href="/">Hem</a></li>
+                <li><a href="/add">Lägg till kurs</a></li>
+                <li><a href="/about">Om</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+<!---Lista för att lägga till nyra kurser-->
+        <h1>Lägg till ny kurs</h1>
+        <form action="/add" method="post">
+          <label for="coursecode">Kurskod:</label>
+          <input type="text" id="coursecode" name="coursecode" required><br>
+      
+          <label for="coursename">Kursnamn:</label>
+          <input type="text" id="coursename" name="coursename" required><br>
+      
+          <label for="syllabus">Kursplan (länk):</label>
+          <input type="text" id="syllabus" name="syllabus"><br>
+      
+          <label for="progression">Progression:</label>
+          <input type="text" id="progression" name="progression" required><br>
+      
+          <button type="submit">Lägg till kurs</button>
+        </form>
+        <a href="/">Tillbaka</a>
+    </main>
+<script src="/js/scripts.js"></script>
+</body>
+</html>

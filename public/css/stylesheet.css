@@ -1,0 +1,282 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    grid-area: nav;
+    height: 100px;
+    background-color: black;
+    margin: 0;
+    position: relative;
+    padding: 0 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em; 
+}
+
+/* Navigering meny för mobilenheter - höger på skärmen */
+nav {
+    background-color: black;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.71);
+    font-size: 1.5em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    display: none;
+    z-index: 1;
+}
+
+nav ul {
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav li {
+    padding: 0.8em 0;
+    width: 100%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 1em;
+    font-weight: 700;
+}
+
+nav a:hover {
+    text-decoration: underline;
+
+}
+
+nav li:hover {
+    cursor: pointer;
+}
+
+/* Menyknapp, öppna meny */
+.menu-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: black;
+    border: white solid 2px;
+    cursor: pointer;
+}
+
+.open {
+    margin: 0 1em;
+}
+
+.menu-btn:hover {
+    background-color: red;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.421);
+}
+
+.menu-icon {
+    margin-right: 10px;
+}
+
+/* HAMBURGER ICON - tre streck */
+.bars {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+.menu-text {
+    font-size: 1.2em;
+    color: white;
+}
+
+/* Menyknapp, stäng */
+.close {
+    margin: 1em 1.5em;
+    padding: 10px 15px;
+
+}
+
+/* mobilmeny -  Roterar två lodräda streck så d blir ett kryss */
+.cross1 {
+    width: 25px;
+    transform: rotate(45deg);
+    position: relative;
+    top: 5px;
+}
+.cross2 {
+    width: 25px;
+    transform: rotate(135deg);
+    position: relative;
+    top: -3px;
+}
+
+/* Mobilmenyn */
+@media only screen and (min-width: 992px) {
+
+    header {
+        padding: 0 3em;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    #open-menu {
+        display: none !important;
+    }
+
+    header {
+        position: static;
+
+    }
+
+    nav {
+        display: block !important;
+        position: static;
+        box-shadow: 0 0px 0px;
+        height: auto;
+        font-size: 1.4em;
+        width: auto;
+
+
+    }
+
+    nav ul {
+        height: 100%;
+
+    }
+
+    nav li {
+        display: inline;
+        padding: 1.2em 0;
+
+    }
+
+}
+
+
+
+/* Main innehållet */
+
+main {
+    width: 40%;
+    margin: auto;
+    margin-top: 10em;
+}
+
+#removeCourse {
+    margin: 10px 0;
+}
+#removeCourse button {
+    background-color: red;
+}
+
+main h1 {
+    margin-bottom: 20px;
+}
+main h2 {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+main ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+main li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+main a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+.remove-btn {
+    background-color: red;
+
+}
+
+main p {
+    line-height: 1.6em;
+    margin-top: 3em;
+}
+
+
+@media screen and (max-width:992px) {
+
+    #logo {
+        font-size: 1em;
+    }
+    main {
+        width: 80%;
+    }
+}
+
+.error {
+    text-align: center;
+    color: red;
+}
+.success {
+    text-align: center;
+    color: green;
+}
