@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // Starta servern
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3003;
 app.listen(port, () => {
   console.log(`Servern körs på http://localhost:${port}`);
 });
@@ -38,9 +38,14 @@ app.get('/', (req, res) => {
     });
   });
   
-  // Om-sidan routing rutter
+  // Om-sidan routing rutt
 app.get('/about', (req, res) => {
   res.render('about');
+});
+
+// Uppdatera-sidan rutt
+app.get('/update', (req, res) => {
+  res.render('update');
 });
 
   // Lägg till ny kurs - Formulärsida
@@ -63,7 +68,7 @@ app.get('/about', (req, res) => {
       });
   });
   
-  // Radera en kurs
+  //Skapar en rutt för Radera en kurs
   app.get('/delete/:id', (req, res) => {
     const id = req.params.id;
     db.run('DELETE FROM courses WHERE id = ?', id, (err) => {
@@ -75,6 +80,36 @@ app.get('/about', (req, res) => {
       }
     });
   });
-  
 
+
+// Skapa en rutt för att visa Ändra/uppdatera en kurs
+app.get('/update/:id', (req, res) => {
+  const id = req.params.id;
+  db.get('SELECT * FROM courses WHERE id = ?', id, (err, row) => {
+      if (err) {
+          console.error(err);
+          res.status(500).send("Internt serverfel");
+      } else {
+          res.render('update', { course: row }); // denna skickar "course" till update.ejs
+      }
+  });
+});
+
+// Uppdatera en kurs med POST-rutt
+app.post('/update/:id', (req, res) => {
+  const id = req.params.id;
+  const { coursecode, coursename, syllabus, progression } = req.body;
+  db.run(
+      'UPDATE courses SET coursecode = ?, coursename = ?, syllabus = ?, progression = ? WHERE id = ?',
+      [coursecode, coursename, syllabus, progression, id],
+      (err) => {
+          if (err) {
+              console.error(err);
+              res.status(500).send("Internt serverfel");
+          } else {
+              res.redirect('/');
+          }
+      }
+  );
+});
 

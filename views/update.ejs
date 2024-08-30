@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startsida</title>
+    <title>Ändra Kurs</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="/css/stylesheet.css">
 </head>
@@ -37,32 +37,27 @@
             </ul>
         </nav>
     </header>
+
+
     <main>
-
-        <!-- Lista för att visa Mina kurser -->
-<h1>Mina kurser</h1>
-  <table>
-    <tr>
-      <th>Kurskod </th>
-      <th>Kursnamn </th>
-      <th>Kursplan </th>
-      <th>Progression </th>
-    </tr>
-    <!--JS för att visa listinnehåll samt radera/ändra-->
-    <% courses.forEach(course => { %>
-      <tr>
-        <td><%= course.coursecode %></td>
-        <td><%= course.coursename %></td> 
-        <td><a href="<%= course.syllabus %>"> Visa kursplan  </a></td>
-        <td><%= course.progression %></td>
-        <td><a href="/update/<%= course.id %>"> Ändra </a></td>
-        <td><a href="/delete/<%= course.id %>"> Radera </a></td>
-      </tr>
-    <% }) %>
-  </table>
-  <a href="/add">Lägg till ny kurs</a>
-    </main>
-<script src="/js/scripts.js"></script>
-</body>
-</html>
-
+            <h1>Uppdatera kurs</h1>
+            <form action="/update/<%= course.id %>" method="post">
+                <label for="coursecode">Kurskod:</label>
+                <input type="text" id="coursecode" name="coursecode" value="<%= course.coursecode %>" required><br>
+            
+                <label for="coursename">Kursnamn:</label>
+                <input type="text" id="coursename" name="coursename" value="<%= course.coursename %>" required><br>
+            
+                <label for="syllabus">Kursplan:</label>
+                <input type="text" id="syllabus" name="syllabus" value="<%= course.syllabus %>"><br>
+            
+                <label for="progression">Progression:</label>
+                <input type="text" id="progression" name="progression" value="<%= course.progression %>" required><br>
+            
+                <button type="submit">Uppdatera kurs</button>
+            </form>
+            <a href="/">Tillbaka</a>
+        </main>
+    <script src="/js/scripts.js"></script>
+    </body>
+    </html>    
