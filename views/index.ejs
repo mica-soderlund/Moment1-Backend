@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startsida</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="/css/stylesheet.css">
 </head>
 <body>
@@ -55,8 +56,8 @@
         <td><%= course.coursename %></td> 
         <td><a href="<%= course.syllabus %>"> Visa kursplan  </a></td>
         <td><%= course.progression %></td>
-        <td><a href="/update/<%= course.id %>"> Ändra </a></td>
-        <td><a href="/delete/<%= course.id %>"> Radera </a></td>
+        <td><a href="/update/<%= course.id %>" class="update-icon"><span class="material-symbols-outlined">edit</span></a></td>
+        <td><a href="/delete/<%= course.id %>" class="delete-icon"><span class="material-symbols-outlined">delete</span></a><td>
       </tr>
     <% }) %>
   </table>
