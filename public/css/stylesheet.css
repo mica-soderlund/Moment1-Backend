@@ -236,15 +236,15 @@ main p {
 }
 
 table {
-    width: 100%; /* Se till att tabellen fyller hela bredden av sin container */
-    table-layout: auto; /* För att låta kolumner anpassa sig efter innehållet */
-    border-collapse: collapse; /* Ta bort mellanrum mellan cellerna */
+    width: 100%; 
+    table-layout: auto; /* öåta kolumner anpassa sig efter innehållet */
+    border-collapse: collapse; 
 }
 
 table td {
     padding: 10px;
     text-align: left;
-    white-space: normal; /* Tillåt radbrytning */
+    white-space: normal; /* radbrytning */
 }
 
 
@@ -261,25 +261,23 @@ table td {
    table {
     width: 100%;
     max-width: 100%;
-    border-collapse: collapse; /* Tar bort mellanrum mellan cellerna */
+    border-collapse: collapse; 
 }
 
     table td {
-    font-size: 14px; /* Minska textstorleken på mindre skärmar */
-    padding: 8px; /* Justera padding för mindre skärmar */
+    font-size: 14px; 
+    padding: 8px; 
 }
-
-    /* Gör texten mindre på mobil för bättre läsbarhet */
     table td {
     font-size: 14px;
 }
 }
 
 @media screen and (max-width: 768px) {
-    /* Anpassningar för mindre skärmar som smartphones */
+
     table {
-        font-size: 12px; /* Mindre textstorlek */
-        padding: 6px; /* Mindre padding */
+        font-size: 12px;
+        padding: 6px; 
     }
 
     main {
@@ -290,12 +288,12 @@ table td {
 @media screen and (max-width: 600px) {
 
     table tr {
-        margin-bottom: 15px; /* Skapar mellanrum mellan rader */
+        margin-bottom: 15px; /* Skapar mellanrum mellan raderna */
     }
 
     table {
-        text-align: left; /* Justera texten till vänster */
-        padding-left: 50%; /* Skapa utrymme för texten */
+        text-align: left; 
+        padding-left: 50%; 
         position: relative;
     }
 
@@ -305,7 +303,7 @@ table td {
         left: 6px;
         width: 45%; /* Använd 45% för etiketten */
         white-space: nowrap;
-        text-align: left; /* Justera etiketten till vänster */
+        text-align: left; 
         font-weight: bold;
     }
 }
