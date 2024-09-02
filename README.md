@@ -11,10 +11,10 @@ Radera kurs: Besökaren kan radera en kurs från databasen.
 Om-sida: En undersida som ger information om applikationen.
 
 Projektet använder följande npm-paket:
-express: Webbramverk för Node.js
-body-parser: Middleware för att hantera inkommande POST-data 
-dotenv: Hantering av miljövariabler
+express: webbramverk för Node.js
+body-parser: middleware för att hantera inkommande POST-data 
+dotenv: hantering av miljövariabler
 ejs: typ av "view motor" för att rendera/hantera HTML-sidor
 sqlite3: SQLite3-databasmodul för Node.js
-nodemon: Verktyg för att automatiskt starta om servern vid kodändringar
+nodemon: verktyg för att automatiskt starta om servern vid kodändringar
 
